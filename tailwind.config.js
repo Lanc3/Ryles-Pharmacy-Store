@@ -22,8 +22,8 @@ module.exports = {
       }),
       backgroundImage: {
         'shop': "url('/src/assets/shopfront.jpg')",
-        'blue-wave': "url('/src/assets//wave.jpg')",
-        'inside-store': "url('/src/assets//inside-store.jpg')",
+        'blue-wave': "url('/src/assets/bg-wave.jpg')",
+        'inside-store': "url('/src/assets/inside-store.jpg')",
       },
       spacing: {
         '128': '32rem',
