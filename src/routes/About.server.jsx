@@ -1,7 +1,7 @@
 import { Image, Link } from '@shopify/hydrogen';
 import gql from 'graphql-tag';
 import { Suspense } from 'react';
-import WaveBackground from '../assets/wave.jpg';
+import WaveBackground from '../assets/bg-wave.jpg';
 import Layout from '../components/Layout.server';
 
 function BoxFallback() {
