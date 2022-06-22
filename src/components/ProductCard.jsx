@@ -1,5 +1,5 @@
-import {Suspense} from 'react';
-import {Image, Link} from '@shopify/hydrogen';
+import { Image, Link } from '@shopify/hydrogen';
+import { Suspense } from 'react';
 
 import MoneyCompareAtPrice from './MoneyCompareAtPrice.client';
 import MoneyPrice from './MoneyPrice.client';
@@ -17,10 +17,10 @@ export default function ProductCard({product}) {
   return (
     <div className="text-md mb-4 relative">
       <Link to={`/products/${product.handle}`}>
-        <div className="rounded-lg border-2 border-gray-200 mb-2 relative flex items-center justify-center overflow-hidden object-cover h-96">
+        <div className="bg-white rounded-xl border-4 border-[#84754E] relative flex items-center justify-center overflow-hidden object-cover h-96 transition-all duration-500 ease-in-out hover:scale-110">
           {selectedVariant.image ? (
             <Image
-              className="bg-white absolute w-full h-full transition-all duration-500 ease-in-out transform bg-center bg-cover object-center object-contain hover:scale-110"
+              className="bg-white absolute w-full h-full  transform bg-center bg-cover object-center object-contain "
               data={selectedVariant.image}
             />
           ) : null}
@@ -31,7 +31,7 @@ export default function ProductCard({product}) {
           )}
         </div>
 
-        <span className="text-black font-semibold mb-0.5">{product.title}</span>
+        <span className="text-white font-semibold mb-0.5">{product.title}</span>
 
         {product.vendor && (
           <p className="text-gray-900 font-medium text-sm mb-0.5">

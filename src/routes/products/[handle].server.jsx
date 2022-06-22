@@ -1,15 +1,13 @@
 import {
-  useSession,
+  gql, Seo,
+  useRouteParams, useSession,
   useShop,
-  useShopQuery,
-  Seo,
-  useRouteParams,
-  gql,
+  useShopQuery
 } from '@shopify/hydrogen';
 
-import ProductDetails from '../../components/ProductDetails.client';
-import NotFound from '../../components/NotFound.server';
 import Layout from '../../components/Layout.server';
+import NotFound from '../../components/NotFound.server';
+import ProductDetails from '../../components/ProductDetails.client';
 
 export default function Product() {
   const {handle} = useRouteParams();
@@ -113,34 +111,7 @@ const QUERY = gql`
           }
         }
       }
-      metafields(first: 20) {
-        edges {
-          node {
-            id
-            type
-            namespace
-            key
-            value
-            createdAt
-            updatedAt
-            description
-            reference {
-              __typename
-              ... on MediaImage {
-                id
-                mediaContentType
-                image {
-                  id
-                  url
-                  altText
-                  width
-                  height
-                }
-              }
-            }
-          }
-        }
-      }
+
       priceRange {
         maxVariantPrice {
           currencyCode
@@ -172,34 +143,7 @@ const QUERY = gql`
               width
               height
             }
-            metafields(first: 10) {
-              edges {
-                node {
-                  id
-                  type
-                  namespace
-                  key
-                  value
-                  createdAt
-                  updatedAt
-                  description
-                  reference {
-                    __typename
-                    ... on MediaImage {
-                      id
-                      mediaContentType
-                      image {
-                        id
-                        url
-                        altText
-                        width
-                        height
-                      }
-                    }
-                  }
-                }
-              }
-            }
+
             priceV2 {
               amount
               currencyCode

@@ -1,16 +1,12 @@
-import renderHydrogen from '@shopify/hydrogen/entry-server';
 import {
-  Router,
-  Route,
-  FileRoutes,
-  ShopifyProvider,
-  PerformanceMetrics,
-  PerformanceMetricsDebug,
+  FileRoutes, PerformanceMetrics,
+  PerformanceMetricsDebug, Route, Router, ShopifyProvider
 } from '@shopify/hydrogen';
-import {Suspense} from 'react';
+import renderHydrogen from '@shopify/hydrogen/entry-server';
+import { Suspense } from 'react';
 import DefaultSeo from './components/DefaultSeo.server';
-import NotFound from './components/NotFound.server';
 import LoadingFallback from './components/LoadingFallback';
+import NotFound from './components/NotFound.server';
 import ServerCartProvider from './components/ServerCartProvider.server';
 
 function App() {

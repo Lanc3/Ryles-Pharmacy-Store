@@ -15,7 +15,7 @@ export default function LoadingFallback() {
               <OpenIcon />
             </div>
             <p className="font-black uppercase text-3xl tracking-widest">
-              Snowdevil
+              Ryles Pharmacy Tralee
             </p>
             <CartIcon />
           </div>

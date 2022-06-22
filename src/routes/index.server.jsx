@@ -77,20 +77,15 @@ function FeaturedProductsBox({country}) {
     : null;
 
   return (
-    <div className="bg-white p-12 shadow-xl rounded-xl mb-10">
+    <div className="p-10">
       {featuredProductsCollection ? (
         <>
-          <div className="flex justify-between items-center mb-8 text-md font-medium">
-            <span className="text-black uppercase">
-              {featuredProductsCollection.title}
+          <div className="flex justify-center items-center mb-8 text-md font-medium">
+            <span className="text-white uppercase justify-center items-center flex">
+              SHOP OUR BEST DEALS NOW
             </span>
             <span className="hidden md:inline-flex">
-              <Link
-                to={`/collections/${featuredProductsCollection.handle}`}
-                className="text-blue-600 hover:underline"
-              >
-                Shop all
-              </Link>
+             
             </span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">

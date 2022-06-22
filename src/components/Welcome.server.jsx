@@ -150,7 +150,7 @@ function TemplateLinks() {
     <div className="">
       <Suspense fallback={<BoxFallback />}>
       <div className="text-center w-full h-128 bg-shop bg-cover flex justify-center items-center z-10">
-        <div className="w-1/2 h-60 bg-white rounded-xl border-4 border-[#84754E] space-y-4 pt-6 px-">
+        <div className="w-1/2 h-60 bg-white rounded-xl border-4 border-[#84754E] space-y-4 pt-6 ">
           <p className='text-xl'>Welcome to Ryles Pharmacy Online</p>
           <p>Brows our great deals now in our</p>
           <p>new online store</p>
@@ -163,7 +163,7 @@ function TemplateLinks() {
         </div>
       </div>
       <div className="text-center w-full h-96  flex justify-center items-center">
-      <div className="w-3/5 h-60 bg-white rounded-xl border-4 border-[#84754E] space-y-4 pt-6">
+      <div className="w-3/5 h-60 bg-white rounded-xl border-4 border-[#84754E] space-y-4 pt-6 shadow-2xl shadow-[#bba97d88]">
           <p className='text-xl'>GET IN TOUCH</p>
           <div className='flex flex-row justify-center'>
           <p className='pr-2'>Call now on </p>
@@ -180,7 +180,7 @@ function TemplateLinks() {
         </div>
       </div>
       <div className='w-full bg-white h-128'>
-          <div className='flex justify-center bg-ryles-gold h-12 items-center w-full'>
+          <div className='flex justify-center bg-ryles-gold h-12 items-center w-full shadow-sm shadow-ryles-gold'>
             <p className='text-xl text-white font-bold'>About Ryles Pharmacy</p>
           </div>
           <div className='flex flex-row pt-11 justify-center h-96'>
@@ -199,20 +199,22 @@ function TemplateLinks() {
           </div>
         </div>
         <div className="text-center w-full h-96  flex justify-center items-center">
-      <div className="w-3/5 h-60 bg-white rounded-xl border-4 border-[#84754E] space-y-4 pt-6">
-          <p className='text-xl'>GET IN TOUCH</p>
+      <div className="w-4/5 h-70 bg-white rounded-xl border-4 border-[#84754E] space-y-4 pt-6 shadow-2xl shadow-[#bba97d88]">
+          <p className='text-xl'>What we Offer</p>
           <div className='flex flex-row justify-center'>
-          <p className='pr-2'>Call now on </p>
-          <p className='font-bold'>(066)71 24701</p>
+          <p className='pr-2'>We offer a continuously growing, wide range of services at Ryles Pharmacy</p>
           </div>
-          <p>Fill out our contact form now and we will</p>
-          <p>get back to you ASAP</p>
-          <Link
-          to={`/contact`}
-          className="inline-block bg-[#84754E] text-white text-lg font-medium rounded-xl py-1 px-8 uppercase"
-        >
-          Contact Us
-        </Link>
+          <p>Services offered but not limit to include:</p>
+          <div className="grid grid-cols-4 gap-4 pb-10 pt-10">
+          <div>Free Weight/Height/BMI Measurement</div>
+          <div>Emergency Hormonal Contraception</div>
+          <div>Flu Vaccination</div>
+          <div>Viagra Connect</div>
+          <div>Free Blood Pressure Checks</div>
+          <div>PrEP Medication</div>
+          <div>Express Medicines Service</div>
+          <div>Specialized Medications</div>
+        </div>
         </div>
       </div>
       </Suspense>

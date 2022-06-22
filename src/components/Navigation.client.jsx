@@ -22,35 +22,35 @@ export default function Navigation({isOpen, pages, collections}) {
   }, [isOpen]);
 
   return (
-        <div className="flex flex-row items-center">
-          <div className=" lg:block w-20 mr-20 items-stretch">
+        <div className=" w-8/12 flex justify-between items-center">
+          <div className="flex">
           <Image src={logo} width="90" height="90" />
           </div>
-          <div className=" lg:block text-center">
-          <nav className=" lg:block text-center items-stretch flex">
-            <ul className="md:flex items-center justify-center">
+          <div className="">
+          <nav className="flex flex-row p-10">
+            <ul className="flex">
             <li>
               <Link
                     to={`/`}
-                    className="block p-4 hover:opacity-80 text-[#2D4C85]"
+                    className="p-10 hover:opacity-80 text-[#2D4C85]"
                   >Home</Link>
               </li>
               <li>
               <Link
                     to={`/collections/frontpage`}
-                    className="block p-4 hover:opacity-80 text-[#2D4C85]"
+                    className="p-10 hover:opacity-80 text-[#2D4C85]"
                   >Shop</Link>
               </li>
               <li>
               <Link
                     to={`/about`}
-                    className="block p-4 hover:opacity-80 text-[#2D4C85]"
+                    className="p-10 hover:opacity-80 text-[#2D4C85]"
                   >About</Link>
               </li>
               <li>
               <Link
                     to={`/contact`}
-                    className="block p-4 hover:opacity-80 text-[#2D4C85]"
+                    className="p-10 hover:opacity-80 text-[#2D4C85]"
                   >Contact</Link>
               </li>
             </ul>
