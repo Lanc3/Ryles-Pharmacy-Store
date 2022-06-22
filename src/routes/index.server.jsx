@@ -4,9 +4,7 @@ import {
   useShopQuery
 } from '@shopify/hydrogen';
 
-import { Image } from '@shopify/hydrogen';
 import { Suspense } from 'react';
-import WaveBackground from '../assets/wave.jpg';
 import FeaturedCollection from '../components/FeaturedCollection';
 import Layout from '../components/Layout.server';
 import ProductCard from '../components/ProductCard';
@@ -130,10 +128,9 @@ function FeaturedCollectionBox({country}) {
 
 function GradientBackground() {
   return (
-    <div className="fixed top-0 w-full h-full overflow-hidden">
+    <div className="fixed top-0 w-full h-full overflow-hidden bg-blue-wave">
       <div className="absolute w-full h-full from-gray-50 z-10" />
 
-      <Image src={WaveBackground} width="100%" height="100%" />
     </div>
   );
 }

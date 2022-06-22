@@ -1,7 +1,6 @@
-import { Image, Link } from '@shopify/hydrogen';
+import { Link } from '@shopify/hydrogen';
 import gql from 'graphql-tag';
 import { Suspense } from 'react';
-import WaveBackground from '../assets/bg-wave.jpg';
 import Layout from '../components/Layout.server';
 
 function BoxFallback() {
@@ -11,10 +10,9 @@ function BoxFallback() {
 }
 function GradientBackground() {
   return (
-    <div className="fixed top-0 w-full h-full overflow-hidden">
-      <div className="absolute w-full h-full bg-gradient-to-t from-gray-50" />
+    <div className="fixed top-0 w-full h-full overflow-hidden bg-blue-wave">
+      <div className="absolute w-full h-full from-gray-50 z-10" />
 
-      <Image src={WaveBackground} width="100%" height="100%" />
     </div>
   );
 }
