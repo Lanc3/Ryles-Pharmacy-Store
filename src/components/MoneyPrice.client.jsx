@@ -1,4 +1,4 @@
-import {useMoney} from '@shopify/hydrogen';
+import { useMoney } from '@shopify/hydrogen';
 
 /**
  * A client component that defines the currency code, currency symbol, and amount of a product
@@ -6,7 +6,7 @@ import {useMoney} from '@shopify/hydrogen';
 export default function MoneyPrice({money}) {
   const {currencyCode, currencyNarrowSymbol, amount} = useMoney(money);
   return (
-    <span className="text-black text-md">
+    <span className="text-lg text-[#ebb93c] text-md m-5">
       {currencyCode}
       {currencyNarrowSymbol}
       {amount}

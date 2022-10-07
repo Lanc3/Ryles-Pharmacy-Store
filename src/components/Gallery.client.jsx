@@ -1,4 +1,4 @@
-import {useProduct, MediaFile, Image} from '@shopify/hydrogen';
+import { Image, MediaFile, useProduct } from '@shopify/hydrogen';
 
 /**
  * A client component that defines a media gallery for hosting images, 3D models, and videos of products
@@ -26,13 +26,13 @@ export default function Gallery() {
 
   return (
     <div
-      className="gap-4 flex md:grid md:grid-cols-2 overflow-x-scroll no-scrollbar scroll-snap-x scroll-smooth h-[485px] md:h-auto place-content-start"
+      className="gap-2 flex md:grid md:grid-cols-2 overflow-x-scroll no-scrollbar scroll-snap-x scroll-smooth h-[485px] md:h-auto place-content-start"
       tabIndex="-1"
     >
       <Image
         fetchpriority="high"
         data={selectedVariant.image}
-        className="w-[80vw] md:w-full h-full md:h-auto object-cover object-center flex-shrink-0 md:flex-shrink-none snap-start md:col-span-2 border border-gray-200 rounded-lg"
+        className="w-2/3 h-2/3 md:h-auto flex-shrink-0 md:flex-shrink-none snap-start md:col-span-2 border border-gray-200 rounded-lg ml-48"
       />
       {galleryMedia.map((med) => {
         let extraProps = {};

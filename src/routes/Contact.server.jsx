@@ -12,13 +12,13 @@ function BoxFallback() {
 export default function Contact() {
   return (
     <div className="">
-      <Layout>
+      <Layout hero={<GradientBackground />}>
       <Suspense fallback={<BoxFallback />}>
 <section class="mx-20 py-20 overflow-hidden relative z-10">
    <div class="">
       <div class="flex flex-wrap lg:justify-between -mx-4">
          <div class="w-full lg:w-1/2 xl:w-6/12 px-4">
-            <div class="max-w-[570px] mb-12 lg:mb-0 rounded-xl border-4 border-[#84754E]">
+            <div class="max-w-[570px] mb-12 lg:mb-0 rounded-xl border-4 border-[#84754E] bg-white">
                <span class="mb-4 text-base text-primary font-semibold text-ryles-blue flex justify-center">
                Contact Us
                </span>
@@ -38,24 +38,24 @@ export default function Contact() {
                   >
                   GET IN TOUCH WITH US
                </h2>
-               <p class="text-base text-body-color leading-relaxed mb-9 text-ryles-blue flex justify-center">
+               <p class="text-lg font-bold text-body-color leading-relaxed mb-9 text-ryles-blue flex text-center pl-4 pr-4">
                   We at Ryles Pharmacy are here to answer
                   any questions you may have
                </p>
-               <p class="text-base text-body-color leading-relaxed mb-9 text-ryles-blue flex justify-center">
+               <p class="text-lg font-bold text-body-color leading-relaxed mb-9 text-ryles-blue flex justify-center pl-4 pr-4">
                   You can give us a call on the number below
                </p>
-               <p class="text-base text-body-color leading-relaxed mb-9 text-ryles-blue flex justify-center">
+               <p class="text-lg font-bold text-body-color leading-relaxed mb-9 text-ryles-blue flex justify-center pl-4 pr-4">
                   Or
                </p>
-               <p class="text-base text-body-color leading-relaxed mb-9 text-ryles-blue flex justify-center">
+               <p class="text-lg font-bold text-body-color leading-relaxed mb-9 text-ryles-blue flex text-center pl-4 pr-4">
                   Fill out the form and we will get back to you
                   as soon as possible
                </p>
-               <p class="text-base text-body-color leading-relaxed mb-9 text-ryles-blue flex justify-center">
+               <p class="text-lg font-bold text-body-color leading-relaxed mb-9 text-ryles-blue flex text-center pl-4 pr-4">
                   Please note we can not deal with prescriptions online so call in store to us for any of your prescription needs
                </p>
-               <div class="flex mb-8 max-w-[370px] w-full">
+               <div class="flex mb-8 max-w-[370px] w-full justify-center">
                   <div
                      class="
                      max-w-[60px]
@@ -1084,6 +1084,14 @@ export default function Contact() {
     </div>
   );
 }
+function GradientBackground() {
+   return (
+     <div className="fixed top-0 w-full h-full overflow-hidden bg-blue-wave">
+       <div className="absolute w-full h-full from-gray-50 z-10" />
+ 
+     </div>
+   );
+ }
 
 const QUERY = gql`
   query welcomeContent {

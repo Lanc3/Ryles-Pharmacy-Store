@@ -1,16 +1,13 @@
 import {
-  useSession,
+  flattenConnection, gql, Seo, useSession,
   useShop,
-  useShopQuery,
-  flattenConnection,
-  Seo,
-  gql,
+  useShopQuery
 } from '@shopify/hydrogen';
 
-import LoadMoreProducts from '../../components/LoadMoreProducts.client';
 import Layout from '../../components/Layout.server';
-import ProductCard from '../../components/ProductCard';
+import LoadMoreProducts from '../../components/LoadMoreProducts.client';
 import NotFound from '../../components/NotFound.server';
+import ProductCard from '../../components/ProductCard';
 
 export default function Collection({collectionProductCount = 24, params}) {
   const {languageCode} = useShop();
@@ -37,15 +34,15 @@ export default function Collection({collectionProductCount = 24, params}) {
   const hasNextPage = data.collection.products.pageInfo.hasNextPage;
 
   return (
-    <Layout>
+    <Layout hero={<GradientBackground />}>
       {/* the seo object will be expose in API version 2022-04 or later */}
       <Seo type="collection" data={collection} />
-      <h1 className="font-bold text-4xl md:text-5xl text-gray-900 mb-6 mt-6">
+      <h1 className="flex justify-center font-bold text-4xl md:text-5xl text-gray-900 mb-6 mt-6">
         {collection.title}
       </h1>
       <div
         dangerouslySetInnerHTML={{__html: collection.descriptionHtml}}
-        className="text-lg"
+        className="text-lg flex justify-center"
       />
       <p className="text-sm text-gray-500 mt-5 mb-5">
         {products.length} {products.length > 1 ? 'products' : 'product'}
@@ -61,6 +58,14 @@ export default function Collection({collectionProductCount = 24, params}) {
         <LoadMoreProducts startingCount={collectionProductCount} />
       )}
     </Layout>
+  );
+}
+function GradientBackground() {
+  return (
+    <div className="fixed top-0 w-full h-full overflow-hidden bg-blue-wave">
+      <div className="absolute w-full h-full from-gray-50 z-10" />
+
+    </div>
   );
 }
 

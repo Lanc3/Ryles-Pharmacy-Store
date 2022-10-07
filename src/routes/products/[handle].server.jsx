@@ -32,13 +32,20 @@ export default function Product() {
   }
 
   return (
-    <Layout>
+    <Layout hero={<GradientBackground />}>
       <Seo type="product" data={product} />
       <ProductDetails product={product} />
     </Layout>
   );
 }
+function GradientBackground() {
+  return (
+    <div className="fixed top-0 w-full h-full overflow-hidden bg-blue-wave -z-10">
+      <div className="absolute w-full h-full from-gray-50" />
 
+    </div>
+  );
+}
 const QUERY = gql`
   query product(
     $country: CountryCode

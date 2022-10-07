@@ -1,18 +1,13 @@
 import {
-  flattenConnection,
-  useProduct,
-  useParsedMetafields,
-  ProductProvider,
-  ProductPrice,
   AddToCartButton,
-  BuyNowButton,
+  BuyNowButton, flattenConnection, ProductPrice, ProductProvider, useParsedMetafields, useProduct
 } from '@shopify/hydrogen';
-import ProductOptions from './ProductOptions.client';
-import Gallery from './Gallery.client';
 import {
   BUTTON_PRIMARY_CLASSES,
-  BUTTON_SECONDARY_CLASSES,
+  BUTTON_SECONDARY_CLASSES
 } from './Button.client';
+import Gallery from './Gallery.client';
+import ProductOptions from './ProductOptions.client';
 
 function AddToCartMarkup() {
   const {selectedVariant} = useProduct();
@@ -127,13 +122,13 @@ export default function ProductDetails({product}) {
   return (
     <>
       <ProductProvider data={product} initialVariantId={initialVariant.id}>
-        <div className="grid grid-cols-1 md:grid-cols-[2fr,1fr] gap-x-8 my-16">
+        <div className="grid grid-cols-1 md:grid-cols-[2fr,1fr] gap-x-8 my-16 z-10">
           <div className="md:hidden mt-5 mb-8">
-            <h1 className="text-4xl font-bold text-black mb-4">
+            <h1 className="text-4xl font-bold text-ryles-blue mb-4">
               {product.title}
             </h1>
             {product.vendor && (
-              <div className="text-sm font-medium mb-2 text-gray-900">
+              <div className="text-sm font-medium mb-2 text-ryles-blue">
                 {product.vendor}
               </div>
             )}
@@ -147,11 +142,11 @@ export default function ProductDetails({product}) {
 
           <div>
             <div className="hidden md:block">
-              <h1 className="text-5xl font-bold text-black mb-4">
+              <h1 className="text-5xl font-bold text-ryles-blue mb-4">
                 {product.title}
               </h1>
               {product.vendor && (
-                <div className="text-sm font-medium mb-2 text-gray-900">
+                <div className="text-sm font-medium mb-2 text-ryles-blue">
                   {product.vendor}
                 </div>
               )}
@@ -187,7 +182,7 @@ export default function ProductDetails({product}) {
                         strokeLinejoin="round"
                       />
                     </svg>
-                    <span className="text-sm text-gray-900 font-medium">
+                    <span className="text-sm text-ryles-blue font-medium">
                       Sustainable Material
                     </span>
                   </span>
@@ -209,14 +204,14 @@ export default function ProductDetails({product}) {
                         strokeLinejoin="round"
                       />
                     </svg>
-                    <span className="text-sm text-gray-900 font-medium">
+                    <span className="text-sm text-ryles-blue font-medium">
                       Lifetime Warranty
                     </span>
                   </span>
                 )}
               </div>
             </div>
-            <div className="prose border-t border-gray-200 pt-6 text-black text-md">
+            <div className="prose border-t border-gray-200 pt-6 text-ryles-blue text-md">
               {product.description}
             </div>
             {sizeChartMetafield?.value && (

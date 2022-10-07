@@ -21,10 +21,9 @@ export default function Index() {
         <Welcome />
         <Suspense fallback={<BoxFallback />}>
           <FeaturedProductsBox country={countryCode} />
+          <FeaturedCollectionBox/>
         </Suspense>
-        <Suspense fallback={<BoxFallback />}>
-          <FeaturedCollectionBox country={countryCode} />
-        </Suspense>
+
       </div>
     </Layout>
   );
@@ -70,16 +69,17 @@ function FeaturedProductsBox({country}) {
 
   const collections = data ? flattenConnection(data.collections) : [];
   const featuredProductsCollection = collections[0];
+  
   const featuredProducts = featuredProductsCollection
     ? flattenConnection(featuredProductsCollection.products)
     : null;
 
   return (
-    <div className="p-10">
+    <div className="p-10 mx-20">
       {featuredProductsCollection ? (
         <>
-          <div className="flex justify-center items-center mb-8 text-md font-medium">
-            <span className="text-white uppercase justify-center items-center flex">
+          <div className="w-full flex justify-center items-center mb-8 text-md font-medium ">
+            <span className="w-full font-semibold text-lg text-white text-primary mb-2 flex bg-ryles-gold uppercase justify-center items-center rounded-xl">
               SHOP OUR BEST DEALS NOW
             </span>
             <span className="hidden md:inline-flex">
@@ -93,7 +93,7 @@ function FeaturedProductsBox({country}) {
               </div>
             ))}
           </div>
-          <div className="md:hidden text-center">
+          <div className="text-center">
             <Link
               to={`/collections/${featuredProductsCollection.handle}`}
               className="text-blue-600"
@@ -120,10 +120,9 @@ function FeaturedCollectionBox({country}) {
   });
 
   const collections = data ? flattenConnection(data.collections) : [];
-  const featuredCollection =
-    collections && collections.length > 1 ? collections[1] : collections[0];
+  
 
-  return <FeaturedCollection collection={featuredCollection} />;
+  return (collections.map((coll) => <FeaturedCollection collection={coll} />));
 }
 
 function GradientBackground() {
@@ -146,12 +145,13 @@ const SEO_QUERY = gql`
 const QUERY = gql`
   query indexContent($country: CountryCode, $language: LanguageCode)
   @inContext(country: $country, language: $language) {
-    collections(first: 2) {
+    collections(first: 6) {
       edges {
         node {
           handle
           id
           title
+          description
           image {
             id
             url
@@ -165,6 +165,7 @@ const QUERY = gql`
                 handle
                 id
                 title
+                description
                 variants(first: 1) {
                   edges {
                     node {
