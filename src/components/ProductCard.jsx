@@ -21,7 +21,7 @@ export default function ProductCard({product}) {
   <div class="rounded-xl shadow-lg bg-white max-w-sm">
   {selectedVariant.image ? (
             <Image
-              className="rounded-t-xl max-h-96 border-t-2 border-l-2 border-r-2 border-[#84754E]"
+              className="object-fill rounded-t-xl max-h-96 border-t-2 border-l-2 border-r-2 border-[#84754E] min-w-full"
               data={selectedVariant.image}
             />
           ) : null}

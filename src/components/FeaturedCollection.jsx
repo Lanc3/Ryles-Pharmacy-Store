@@ -8,7 +8,7 @@ export default function FeaturedCollection({collection}) {
   ? flattenConnection(collection.products)
   : null;
   return collection ? (
-    <div className="shadow-xl rounded-xl grid grid-cols-1 lg:grid-cols-1 items-center bg-white overflow-hidden m-20">
+    <div className="shadow-xl rounded-xl border-2 border-[#84754E] grid grid-cols-1 lg:grid-cols-1 items-center bg-white overflow-hidden m-20">
       <div>{collection.image ? (
         <div className=' flex justify-center w-full'>
         <Image width="622" height="465" data={collection.image} />
