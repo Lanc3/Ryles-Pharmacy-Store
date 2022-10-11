@@ -1,4 +1,4 @@
-import {useProduct} from '@shopify/hydrogen';
+import { useProduct } from '@shopify/hydrogen';
 
 /**
  * A client component that tracks a selected variant and/or selling plan state, as well as callbacks for modifying the state
@@ -9,6 +9,11 @@ export default function ProductOptions() {
   return (
     <>
       {options.map(({name, values}) => {
+        if(name ==='Title')
+        {
+          return <div></div>;
+        }
+        else{
         return (
           <fieldset key={name} className="mt-8">
             <legend className="mb-4 text-xl font-medium text-gray-900">
@@ -43,6 +48,7 @@ export default function ProductOptions() {
             </div>
           </fieldset>
         );
+        }
       })}
     </>
   );

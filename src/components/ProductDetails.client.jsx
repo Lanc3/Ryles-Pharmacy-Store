@@ -122,7 +122,7 @@ export default function ProductDetails({product}) {
   return (
     <>
       <ProductProvider data={product} initialVariantId={initialVariant.id}>
-        <div className="grid grid-cols-1 md:grid-cols-[2fr,1fr] gap-x-8 my-16 z-10">
+        <div className="grid grid-cols-2 md:grid-cols-[2fr,2fr] gap-x-8 my-16 z-10">
           <div className="md:hidden mt-5 mb-8">
             <h1 className="text-4xl font-bold text-ryles-blue mb-4">
               {product.title}
@@ -138,10 +138,10 @@ export default function ProductDetails({product}) {
             </div>
           </div>
 
-          <Gallery />
+          <Gallery title={product.title}/>
 
           <div>
-            <div className="hidden md:block">
+            <div className="">
               <h1 className="text-5xl font-bold text-ryles-blue mb-4">
                 {product.title}
               </h1>
@@ -150,11 +150,11 @@ export default function ProductDetails({product}) {
                   {product.vendor}
                 </div>
               )}
-              <ProductPrices />
+              <ProductOptions />
             </div>
             {/* Product Options */}
             <div className="mt-8">
-              <ProductOptions />
+              
               {sizeChartMetafield?.value && (
                 <a
                   href="#size-chart"
